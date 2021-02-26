@@ -1,0 +1,19 @@
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# dotenv
+.env*
+
+# gatsby
+.cache/
+public
+
+# misc
+.DS_Store

@@ -1,0 +1,95 @@
+{
+  "name": "embla-carousel-docs",
+  "version": "1.0.0",
+  "private": false,
+  "author": "David Cetinkaya",
+  "description": "A lightweight carousel library with fluid motion and great swipe precision",
+  "keywords": [
+    "slider",
+    "carousel",
+    "slideshow",
+    "gallery",
+    "lightweight",
+    "touch",
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidcetinkaya/embla-carousel-docs"
+  },
+  "bugs": {
+    "url": "https://github.com/davidcetinkaya/embla-carousel-docs/issues"
+  },
+  "homepage": "https://embla-carousel.com",
+  "husky": {
+    "hooks": {
+      "pre-push": "npm-run-all prettier:report eslint:report"
+    }
+  },
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "prettier:report": "prettier '**/*.{js,tsx,ts,scss,json}' --check",
+    "prettier:fix": "prettier '**/*.{js,tsx,ts,scss,json}' --write",
+    "eslint:report": "eslint 'src/**/*.{js,tsx,ts}'",
+    "eslint:fix": "eslint 'src/**/*.{js,tsx,ts}' --fix",
+    "predeploy:clean": "shx rm -r ./docs",
+    "predeploy:build": "npm-run-all clean build",
+    "predeploy:copy": "shx cp -r ./public ./docs",
+    "predeploy": "npm-run-all predeploy:clean predeploy:build predeploy:copy"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "babel-plugin-styled-components": "^1.12.0",
+    "focus-trap-react": "^8.4.1",
+    "gatsby": "^2.32.3",
+    "gatsby-plugin-layout": "^1.7.0",
+    "gatsby-plugin-manifest": "^2.9.0",
+    "gatsby-plugin-mdx": "^1.7.0",
+    "gatsby-plugin-offline": "^3.10.0",
+    "gatsby-plugin-react-helmet": "^3.7.0",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-sitemap": "^2.9.0",
+    "gatsby-plugin-styled-components": "^3.7.0",
+    "gatsby-remark-autolink-headers": "^2.8.0",
+    "gatsby-remark-prismjs": "^3.12.0",
+    "gatsby-source-filesystem": "^2.8.0",
+    "intersection-observer": "^0.12.0",
+    "lodash": "^4.17.20",
+    "polished": "^4.0.5",
+    "prismjs": "^1.23.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
+    "react-intersection-observer": "^8.31.0",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.167",
+    "@types/mdx-js__react": "^1.5.3",
+    "@types/node": "^14.14.16",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-helmet": "^6.1.0",
+    "@types/styled-components": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^4.3.6",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "shx": "^0.3.3",
+    "typescript": "^4.1.3"
+  }
+}
