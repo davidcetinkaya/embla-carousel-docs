@@ -27,7 +27,7 @@ const Wrapper = styled(Frame)`
 
 const Main = styled.main<{ $isStartPage: boolean }>`
   flex: 1;
-  max-width: none;
+  max-width: 100%;
 
   ${({ $isStartPage }) =>
     !$isStartPage &&
