@@ -2,6 +2,7 @@ import React, {
   createContext,
   PropsWithChildren,
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -26,8 +27,8 @@ export const ThemeProvider = (props: PropType) => {
   const { getLocalStorageItem, setLocalStorageItem } = useLocalStorage(
     LOCALSTORAGE_KEYS.THEME,
   )
-  const initTheme = (getLocalStorageItem() as ThemeKeyType) || THEME_KEYS.LIGHT
-  const [theme, setTheme] = useState<ThemeKeyType>(initTheme)
+
+  const [theme, setTheme] = useState<ThemeKeyType>(THEME_KEYS.LIGHT)
 
   const toggleTheme = useCallback(() => {
     setTheme((current) => {
@@ -37,6 +38,12 @@ export const ThemeProvider = (props: PropType) => {
       return newTheme
     })
   }, [setTheme])
+
+  useEffect(() => {
+    const initTheme =
+      (getLocalStorageItem() as ThemeKeyType) || THEME_KEYS.LIGHT
+    setTheme(initTheme)
+  }, [setTheme, getLocalStorageItem])
 
   const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme])
 

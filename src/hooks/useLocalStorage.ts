@@ -11,7 +11,8 @@ export const useLocalStorage = (key: string): UseLocalStorageType => {
     if (!isBrowser) return ''
     let storedValue
     try {
-      storedValue = localStorage.getItem(key)
+      storedValue = JSON.parse(localStorage.getItem(key) || '')
+      document.body.classList.add('dark-theme')
     } catch (error) {
       console.error(error) // eslint-disable-line no-console
     }
@@ -21,7 +22,7 @@ export const useLocalStorage = (key: string): UseLocalStorageType => {
   const setLocalStorageItem = useCallback((value: string) => {
     if (!isBrowser) return
     try {
-      localStorage.setItem(key, value)
+      localStorage.setItem(key, JSON.stringify(value))
     } catch (error) {
       console.error(error) // eslint-disable-line no-console
     }

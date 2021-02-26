@@ -4,11 +4,7 @@ import shareImage from 'assets/images/share-image.jpg'
 import config from './gatsby-config'
 import { removeProtocol } from 'utils'
 
-export const onRenderBody = ({
-  setHeadComponents,
-  setPostBodyComponents,
-  setPreBodyComponents,
-}) => {
+export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
   const { siteUrl } = config.siteMetadata
 
   setPreBodyComponents([
@@ -48,13 +44,5 @@ export const onRenderBody = ({
       content={`${siteUrl}${shareImage}`}
     />,
     <link key="favicon" rel="icon" href={favicon} />,
-  ])
-  setPostBodyComponents([
-    <div
-      key="service-worker"
-      id="service-worker"
-      aria-hidden="true"
-      role="complementary"
-    />,
   ])
 }
