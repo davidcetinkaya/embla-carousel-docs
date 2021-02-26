@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/davidcetinkaya/embla-carousel-docs/issues"
   },
-  "homepage": "https://embla-carousel.com",
+  "homepage": "https://www.embla-carousel.com",
   "husky": {
     "hooks": {
       "pre-push": "npm-run-all prettier:report eslint:report"
