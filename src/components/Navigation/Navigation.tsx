@@ -5,7 +5,6 @@ import { useEventListener, useNavigation } from 'hooks'
 import { hiddenAtBreakpointStyles } from 'utils'
 import { breakpoints, LAYERS } from 'consts'
 import { Toggle } from './Toggle'
-import { rgba } from 'polished'
 import { Menu } from './Menu'
 
 const Wrapper = styled.nav`
@@ -35,7 +34,7 @@ const Nav = styled.div<{ $isOpen: boolean }>`
 `
 
 const Overlay = styled.div`
-  background-color: ${({ theme }) => rgba(theme.backgroundSite, 0.6)};
+  background-color: rgba(var(--background-site-rgb-value), 0.6);
   position: absolute;
   top: 0;
   right: 0;

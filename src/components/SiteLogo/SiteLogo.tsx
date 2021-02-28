@@ -3,10 +3,11 @@ import logoLightThemeUrl from 'assets/images/embla-logo-light-theme.svg'
 import logoDarkThemeUrl from 'assets/images/embla-logo-dark-theme.svg'
 import { useInView } from 'react-intersection-observer'
 import { useSiteMetadata, useTheme } from 'hooks'
+import { THEME_KEYS } from 'consts'
 
 const LOGOS = {
-  LIGHT: (logoLightThemeUrl as unknown) as string,
-  DARK: (logoDarkThemeUrl as unknown) as string,
+  [THEME_KEYS.LIGHT]: (logoLightThemeUrl as unknown) as string,
+  [THEME_KEYS.DARK]: (logoDarkThemeUrl as unknown) as string,
 }
 
 type PropType = PropsWithChildren<{}>

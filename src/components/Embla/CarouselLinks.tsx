@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `
 
 const Item = styled.div`
-  color: ${({ theme }) => theme.textLowContrast};
+  color: var(--text-low-contrast);
   display: flex;
   align-items: center;
   padding-left: 1.4rem;

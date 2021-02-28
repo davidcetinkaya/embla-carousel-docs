@@ -23,7 +23,7 @@ const Item = styled.div`
 `
 
 const ItemLabel = styled.div`
-  color: ${({ theme }) => theme.textLowContrast};
+  color: var(--text-low-contrast);
   padding-bottom: 0.6rem;
 `
 
@@ -35,7 +35,7 @@ const ItemTitle = styled.div`
 
 const arrowSvgStyles = css`
   ${createSquareSizeStyles('1.8rem')}
-  color: ${({ theme }) => theme.brandPrimary};
+  color: var(--brand-primary);
 `
 
 const ArrowLeftSvg = styled(ArrowLeftIcon)`
@@ -46,7 +46,7 @@ const ArrowLeftSvg = styled(ArrowLeftIcon)`
 const ArrowRightSvg = styled(ArrowRightIcon)`
   ${arrowSvgStyles};
   ${supportsStyles.gradientText} {
-    color: ${({ theme }) => theme.brandSecondary};
+    color: var(--brand-secondary);
   }
   margin-left: 0.6rem;
 `

@@ -1,22 +1,16 @@
-import React, { PropsWithChildren } from 'react'
 import styled from 'styled-components'
-import { useTabAccess } from 'hooks/useTabAccess'
 import { headingStyles } from './heading'
 import { blockquoteStyles } from './blockquote'
 import { listStyles } from './list'
 import { codeStyles } from './code'
 
-const Wrapper = styled.div<{ $isTabbing: boolean }>`
+export const MdxStyles = styled.div`
   ${blockquoteStyles};
   ${listStyles};
   ${codeStyles};
   ${headingStyles};
 
-  color: ${({ theme }) => theme.textBody};
-
-  pre:focus {
-    outline: ${({ $isTabbing }) => !$isTabbing && 0};
-  }
+  color: var(--text-body);
 
   h1,
   h2,
@@ -53,16 +47,3 @@ const Wrapper = styled.div<{ $isTabbing: boolean }>`
     margin-bottom: 0;
   }
 `
-
-type PropType = PropsWithChildren<{}>
-
-export const MdxStyles = (props: PropType) => {
-  const { children, ...restProps } = props
-  const isTabbing = useTabAccess()
-
-  return (
-    <Wrapper $isTabbing={isTabbing} {...restProps}>
-      {children}
-    </Wrapper>
-  )
-}

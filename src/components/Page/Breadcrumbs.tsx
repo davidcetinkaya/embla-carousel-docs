@@ -13,7 +13,7 @@ const Wrapper = styled.nav`
 `
 
 const itemStyles = css`
-  color: ${({ theme }) => theme.textLowContrast};
+  color: var(--text-low-contrast);
   padding: 0.6rem 0;
 `
 
@@ -26,7 +26,7 @@ const ActiveTitle = styled.span`
 `
 
 const ChevronSvg = styled(ChevronRightIcon)`
-  color: ${({ theme }) => theme.textLowContrast};
+  color: var(--text-low-contrast);
   ${createSquareSizeStyles('0.6rem')};
   margin: 0 0.6rem;
 `

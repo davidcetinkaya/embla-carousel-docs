@@ -17,7 +17,7 @@ const CtaWrapper = styled.div`
 `
 
 const P = styled.p`
-  color: ${({ theme }) => theme.textMediumContrast};
+  color: var(--text-medium-contrast);
   text-align: center;
   margin-bottom: 2.4rem;
   font-size: 1.6rem;

@@ -3,7 +3,6 @@ import { WHEEL_ITEM_SIZE } from './CarouselWheelItem'
 import { frameCollapseStyles } from 'components/SiteLayout'
 import { CAROUSEL_RADIUS, CAROUSEL_SPACING } from './carouselBasicStyles'
 import { breakpoints, LAYERS } from 'consts'
-import { rgba } from 'polished'
 
 export type PerspectiveType = 'left' | 'right'
 
@@ -12,7 +11,7 @@ const VIEWPORT_MAX_WIDTH = '30rem'
 
 export const Wrapper = styled.div`
   height: ${CAROUSEL_HEIGHT};
-  background-color: ${({ theme }) => theme.backgroundCode};
+  background-color: var(--background-code);
   padding-left: ${CAROUSEL_SPACING};
   padding-right: ${CAROUSEL_SPACING};
 
@@ -45,23 +44,21 @@ export const Viewport = styled.div`
   }
   &:before {
     top: -0.5px;
-    ${({ theme }) => css`
-      border-bottom: ${`0.5px solid ${rgba(theme.textHighContrast, 0.3)}`};
-      background: ${`linear-gradient(to top, ${rgba(
-        theme.backgroundCode,
-        0.65,
-      )} 0%, ${rgba(theme.backgroundCode, 1)} 100%)`};
-    `};
+    border-bottom: 0.5px solid rgba(var(--text-high-contrast-rgb-value), 0.3);
+    background: linear-gradient(
+      to top,
+      rgba(var(--background-code-rgb-value), 0.65) 0%,
+      rgba(var(--background-code-rgb-value), 1) 100%
+    );
   }
   &:after {
     bottom: -0.5px;
-    ${({ theme }) => css`
-      border-top: ${`0.5px solid ${rgba(theme.textHighContrast, 0.3)}`};
-      background: ${`linear-gradient(to bottom, ${rgba(
-        theme.backgroundCode,
-        0.65,
-      )} 0%, ${rgba(theme.backgroundCode, 1)} 100%)`};
-    `};
+    border-top: 0.5px solid rgba(var(--text-high-contrast-rgb-value), 0.3);
+    background: linear-gradient(
+      to bottom,
+      rgba(var(--background-code-rgb-value), 0.65) 0%,
+      rgba(var(--background-code-rgb-value), 1) 100%
+    );
   }
 `
 

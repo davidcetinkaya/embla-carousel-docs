@@ -13,7 +13,7 @@ const Wrapper = styled(PlainLink)`
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
   margin-top: 4.8rem;
-  color: ${({ theme }) => theme.textLowContrast};
+  color: var(--text-low-contrast);
 `
 
 const PenSvg = styled(PenIcon)`

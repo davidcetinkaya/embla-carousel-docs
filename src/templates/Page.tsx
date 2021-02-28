@@ -2,7 +2,6 @@ import React, { useMemo } from 'react'
 import { graphql } from 'gatsby'
 import { Seo } from 'components/Seo'
 import maskable from 'assets/images/maskable.png'
-import shareImage from 'assets/images/share-image.jpg'
 import { useSiteMetadata } from 'hooks'
 import { Mdx, EditPage, Pagination, Breadcrumbs } from 'components/Page'
 import { RouteType } from 'components/Routes'
@@ -67,7 +66,7 @@ const Page = (props: PropType) => {
               "description": "${description}",
               "url": "${siteUrl}${pageContext.slug}",
               "headline": "${title}",
-              "image": "${siteUrl}${shareImage}",
+              "image": "${siteUrl}/share-image.jpg",
               "datePublished": "${dateToISOString}",
               "dateModified": "${dateToISOString}",
               "author": {

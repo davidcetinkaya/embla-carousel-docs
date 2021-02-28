@@ -14,7 +14,7 @@ export const ProgressWrapper = styled.div`
 `
 
 export const ProgressBar = styled.div`
-  background-color: ${({ theme }) => theme.backgroundSite};
+  background-color: var(--background-site);
   max-width: 210px;
   width: 100%;
   position: relative;
@@ -24,10 +24,13 @@ export const ProgressBar = styled.div`
 `
 
 export const ProgressHighlight = styled.div`
-  background-color: ${({ theme }) => theme.brandPrimary};
+  background-color: var(--brand-primary);
   ${supportsStyles.gradientText} {
-    background-image: ${({ theme }) =>
-      `linear-gradient(45deg, ${theme.brandPrimary}, ${theme.brandSecondary})`};
+    background-image: linear-gradient(
+      45deg,
+      var(--brand-primary),
+      var(--brand-secondary)
+    );
   }
   position: absolute;
   width: 100%;

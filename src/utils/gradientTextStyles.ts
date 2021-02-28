@@ -2,10 +2,13 @@ import { supportsStyles } from 'consts'
 import { css } from 'styled-components'
 
 export const gradientTextStyles = css`
-  color: ${({ theme }) => theme.brandPrimary};
+  color: var(--brand-primary);
   ${supportsStyles.gradientText} {
-    background-image: ${({ theme }) =>
-      `linear-gradient(45deg, ${theme.brandPrimary}, ${theme.brandSecondary})`};
+    background-image: linear-gradient(
+      45deg,
+      var(--brand-primary),
+      var(--brand-secondary)
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

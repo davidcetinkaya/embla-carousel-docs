@@ -9,6 +9,7 @@ const MAX_WIDTH = '68.2rem'
 const Wrapper = styled.div`
   max-width: ${MAX_WIDTH};
   margin: 0 auto;
+  text-align: center;
   &:before {
     content: '';
     display: block;

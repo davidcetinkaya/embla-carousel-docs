@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { breakpoints, THEME_KEYS } from 'consts'
 import { SiteLogo } from 'components/SiteLogo'
 import { createSquareSizeStyles, gradientTextStyles } from 'utils'
-import { useSiteMetadata } from 'hooks'
+import { useSiteMetadata, useTheme } from 'hooks'
 
 const Wrapper = styled.div`
   position: relative;
@@ -21,9 +21,9 @@ const Wrapper = styled.div`
   }
 `
 
-const EmblaLogo = styled(SiteLogo)`
+const EmblaLogo = styled(SiteLogo)<{ $isLightTheme: boolean }>`
   ${createSquareSizeStyles('25rem')};
-  opacity: ${({ theme }) => (theme.current === THEME_KEYS.DARK ? 0.15 : 0.1)};
+  opacity: ${({ $isLightTheme }) => ($isLightTheme ? 0.1 : 0.15)};
   position: absolute;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -38,7 +38,7 @@ const EmblaLogo = styled(SiteLogo)`
 `
 
 const H1 = styled.h1`
-  color: ${({ theme }) => theme.textHighContrast};
+  color: var(--text-high-contrast);
   position: relative;
   font-weight: 900;
   font-size: 3rem;
@@ -84,7 +84,7 @@ const H1 = styled.h1`
 `
 
 const H2 = styled.h2`
-  color: ${({ theme }) => theme.textMediumContrast};
+  color: var(--text-medium-contrast);
   line-height: 1.5;
   font-size: 2rem;
 
@@ -99,10 +99,12 @@ const H2 = styled.h2`
 `
 export const Brand = () => {
   const { title, description } = useSiteMetadata()
+  const { theme } = useTheme()
+  const isLightTheme = theme === THEME_KEYS.LIGHT
 
   return (
     <Wrapper>
-      <EmblaLogo />
+      <EmblaLogo $isLightTheme={isLightTheme} />
       <H1>
         {title.split(' ').map((word, index, words) => (
           <span key={`${word}-${index}`}>

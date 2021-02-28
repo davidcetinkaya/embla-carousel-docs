@@ -13,7 +13,7 @@ const HEIGHT = '30.2rem'
 export const Wrapper = styled.div`
   height: ${HEIGHT};
   padding: ${CAROUSEL_SPACING};
-  background-color: ${({ theme }) => theme.backgroundCode};
+  background-color: var(--background-code);
   position: relative;
 
   ${breakpoints.maxSm} {

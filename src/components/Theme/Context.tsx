@@ -6,9 +6,14 @@ import React, {
   useMemo,
   useState,
 } from 'react'
-import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
-import { LOCALSTORAGE_KEYS, THEMES, THEME_KEYS, ThemeKeyType } from 'consts'
+import {
+  LOCALSTORAGE_KEYS,
+  THEME_KEYS,
+  ThemeKeyType,
+  THEME_PREFIX,
+} from 'consts'
 import { useLocalStorage } from 'hooks'
+import { isBrowser } from 'utils'
 
 export type ThemeContextType = {
   theme: ThemeKeyType
@@ -24,34 +29,26 @@ type PropType = PropsWithChildren<{}>
 
 export const ThemeProvider = (props: PropType) => {
   const { children } = props
-  const { getLocalStorageItem, setLocalStorageItem } = useLocalStorage(
-    LOCALSTORAGE_KEYS.THEME,
-  )
-
+  const { setLocalStorageItem } = useLocalStorage(LOCALSTORAGE_KEYS.THEME)
   const [theme, setTheme] = useState<ThemeKeyType>(THEME_KEYS.LIGHT)
 
   const toggleTheme = useCallback(() => {
     setTheme((current) => {
-      const newTheme =
+      const next =
         current === THEME_KEYS.LIGHT ? THEME_KEYS.DARK : THEME_KEYS.LIGHT
-      setLocalStorageItem(newTheme)
-      return newTheme
+      setLocalStorageItem(next)
+      document.documentElement.classList.remove(`${THEME_PREFIX}${current}`)
+      document.documentElement.classList.add(`${THEME_PREFIX}${next}`)
+      return next
     })
   }, [setTheme])
 
   useEffect(() => {
-    const initTheme =
-      (getLocalStorageItem() as ThemeKeyType) || THEME_KEYS.LIGHT
-    setTheme(initTheme)
-  }, [setTheme, getLocalStorageItem])
+    const initialTheme = isBrowser ? window.__THEME__ : THEME_KEYS.LIGHT
+    setTheme(initialTheme)
+  }, [setTheme])
 
   const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme])
 
-  return (
-    <ThemeContext.Provider value={value}>
-      <StyledComponentsThemeProvider theme={THEMES[theme]}>
-        {children}
-      </StyledComponentsThemeProvider>
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }

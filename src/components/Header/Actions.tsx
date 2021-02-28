@@ -28,7 +28,7 @@ const Item = styled.li`
 `
 
 const linkStyles = css`
-  color: ${({ theme }) => theme.textMediumContrast};
+  color: var(--text-medium-contrast);
   display: inline-flex;
   text-align: center;
   padding: 1.1rem 0;

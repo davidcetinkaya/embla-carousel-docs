@@ -1,14 +1,13 @@
 import { frameCollapseStyles } from 'components/SiteLayout'
 import { css } from 'styled-components'
 import { breakpoints, THEME_KEYS } from 'consts'
-import { rgba } from 'polished'
 
 const BORDER_RADIUS = '0.4rem'
 const CODE_PADDING = '2.4rem'
 
 export const codeStyles = css`
   .language-text {
-    background-color: ${({ theme }) => theme.detailLowContrast};
+    background-color: var(--detail-low-contrast);
     border-radius: ${BORDER_RADIUS};
     font-size: 1.44rem;
     padding: 0.288rem 0.6rem;
@@ -29,23 +28,25 @@ export const codeStyles = css`
     }
     &:before {
       left: 0;
-      background: ${({ theme }) =>
-        `linear-gradient(to left, ${rgba(theme.backgroundCode, 0)} 0, ${
-          theme.backgroundCode
-        } 100%)`};
+      background: linear-gradient(
+        to left,
+        rgba(var(--background-code-rgb-value), 0) 0,
+        var(--background-code) 100%
+      );
     }
     &:after {
       right: 0;
-      background: ${({ theme }) =>
-        `linear-gradient(to right, ${rgba(theme.backgroundCode, 0)} 0, ${
-          theme.backgroundCode
-        } 100%)`};
+      background: linear-gradient(
+        to right,
+        rgba(var(--background-code-rgb-value), 0) 0,
+        var(--background-code) 100%
+      );
     }
   }
 
   .gatsby-highlight {
     ${frameCollapseStyles};
-    background-color: ${({ theme }) => theme.backgroundCode};
+    background-color: var(--background-code);
     overflow: hidden;
     position: relative;
     font-size: 1.36rem;
@@ -125,15 +126,15 @@ export const codeStyles = css`
   }
 
   pre {
-    color: ${({ theme }) => theme.textBody};
+    color: var(--text-body);
     overflow: auto;
     white-space: pre;
 
     ::-webkit-scrollbar-thumb {
-      background-color: ${({ theme }) => theme.brandPrimary};
+      background-color: var(--brand-primary);
     }
     ::-webkit-scrollbar-track {
-      background-color: ${({ theme }) => theme.brandSecondary};
+      background-color: var(--brand-secondary);
     }
     ::-webkit-scrollbar {
       width: 0.4rem;
@@ -145,10 +146,7 @@ export const codeStyles = css`
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: ${({ theme }) =>
-      theme.current === THEME_KEYS.LIGHT
-        ? theme.textMediumContrast
-        : theme.textLowContrast};
+    color: var(--text-comment);
   }
   .token.class-name,
   .token.tag,
@@ -160,7 +158,7 @@ export const codeStyles = css`
   .token.selector,
   .token.function:not(.function-variable),
   .token.unit {
-    color: ${({ theme }) => theme.brandPrimary};
+    color: var(--brand-primary);
   }
   .token.string,
   .token.property,
@@ -174,11 +172,11 @@ export const codeStyles = css`
   .token.atrule,
   .token.placeholder,
   .token.variable {
-    color: ${({ theme }) => theme.brandSecondary};
+    color: var(--brand-secondary);
   }
   .token.punctuation,
   .token.plain-text {
-    color: ${({ theme }) => theme.textHighContrast};
+    color: var(--text-high-contrast);
   }
   .token.tag,
   .token.boolean,
@@ -186,7 +184,7 @@ export const codeStyles = css`
   .token.function-name,
   .token.constant,
   .token.symbol {
-    color: ${({ theme }) => theme.brandAlternative};
+    color: var(--brand-alternative);
   }
   .token.namespace {
     opacity: 0.75;

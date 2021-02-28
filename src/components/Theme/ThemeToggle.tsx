@@ -8,7 +8,7 @@ import { useTheme } from 'hooks'
 
 const Wrapper = styled(PlainButton)`
   ${createSquareSizeStyles('4rem')};
-  color: ${({ theme }) => theme.textHighContrast};
+  color: var(--text-high-contrast);
   z-index: ${LAYERS.STEP};
   position: relative;
   display: flex;

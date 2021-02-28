@@ -18,13 +18,13 @@ const Link = styled(PlainLink)`
   margin-right: -${OUTLINE_SIZE};
   padding: 0.6rem ${OUTLINE_SIZE};
   outline-offset: -${OUTLINE_SIZE};
-  color: ${({ theme }) => theme.textMediumContrast};
+  color: var(--text-medium-contrast);
   display: inline-flex;
   align-items: center;
 `
 
 const linkSvgStyles = css`
-  color: ${({ theme }) => theme.detailHighContrast};
+  color: var(--detail-high-contrast);
   ${createSquareSizeStyles('1.8rem')}
   margin-right: 1rem;
   margin-left: -${OUTLINE_SIZE};

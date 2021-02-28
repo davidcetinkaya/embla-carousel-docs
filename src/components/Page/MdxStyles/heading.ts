@@ -11,7 +11,7 @@ export const headingStyles = css`
   h5,
   h6 {
     font-weight: 700;
-    color: ${({ theme }) => theme.textHighContrast};
+    color: var(--text-high-contrast);
   }
 
   h1,
@@ -57,7 +57,7 @@ export const headingStyles = css`
       }
 
       > svg {
-        color: ${({ theme }) => theme.textLowContrast};
+        color: var(--text-low-contrast);
         transform: translate(-50%, -50%);
         position: absolute;
         top: 50%;

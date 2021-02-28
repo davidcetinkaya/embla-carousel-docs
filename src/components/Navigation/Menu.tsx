@@ -8,7 +8,6 @@ import { Logo, HEADER_HEIGHT } from 'components/Header'
 import { Links } from 'components/Footer'
 import { ThemeToggle } from 'components/Theme'
 import { SubMenu } from './SubMenu'
-import { rgba } from 'polished'
 
 const MAX_WIDTH = '35rem'
 const HEADING_HEIGHT = '3.4rem'
@@ -16,7 +15,7 @@ const MAX_HEIGHT_SM_DOWN = `calc(100vh - ${HEADER_HEIGHT})`
 const MAX_HEIGHT_SM_UP = `calc(100vh - 9rem - ${HEADING_HEIGHT})`
 
 const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.backgroundSite};
+  background-color: var(--background-site);
   position: relative;
   height: 100%;
 
@@ -40,10 +39,11 @@ const Content = styled.div`
     left: 0;
     right: 0;
     pointer-events: none;
-    background: ${({ theme }) =>
-      `linear-gradient(to top, ${rgba(theme.backgroundSite, 0)} 0, ${
-        theme.backgroundSite
-      } 100%)`};
+    background: linear-gradient(
+      to top,
+      rgba(var(--background-site-rgb-value), 0) 0,
+      var(--background-site) 100%
+    );
 
     ${breakpoints.maxSm} {
       top: -1rem;

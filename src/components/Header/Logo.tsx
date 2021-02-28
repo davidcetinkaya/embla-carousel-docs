@@ -6,7 +6,7 @@ import { PlainLink } from 'components/Link'
 import { SiteLogo } from 'components/SiteLogo'
 
 const Wrapper = styled(PlainLink)`
-  color: ${({ theme }) => theme.textHighContrast};
+  color: var(--text-high-contrast);
   display: flex;
   align-items: center;
   text-decoration: none;

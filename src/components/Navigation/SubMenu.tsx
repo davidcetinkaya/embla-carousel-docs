@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 `
 
 const Toggle = styled(PlainButton)<{ $isActive: boolean }>`
-  color: ${({ theme }) => theme.textMediumContrast};
+  color: var(--text-medium-contrast);
   padding: ${ITEM_SPACING} 0 ${ITEM_SPACING} 2rem;
   margin: 0 0;
   position: relative;
@@ -36,7 +36,7 @@ const Toggle = styled(PlainButton)<{ $isActive: boolean }>`
 
 const ToggleSvg = styled(ChevronRightIcon)<{ $isOpen: boolean }>`
   transform: ${({ $isOpen }) => $isOpen && 'rotate(90deg)'};
-  color: ${({ theme }) => theme.textLowContrast};
+  color: var(--text-low-contrast);
   ${createSquareSizeStyles('0.8rem')};
   position: absolute;
   left: 0;
@@ -60,7 +60,7 @@ const Menu = styled.ul<{ $isOpen: boolean }>`
     left: 0.3rem;
     width: 0.1rem;
     bottom: ${ITEM_SPACING};
-    background-color: ${({ theme }) => theme.detailMediumContrast};
+    background-color: var(--detail-medium-contrast);
   }
 `
 

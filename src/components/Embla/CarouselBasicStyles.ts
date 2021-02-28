@@ -13,7 +13,7 @@ export const ITEM_SPACING = '1rem'
 export const Wrapper = styled.div`
   height: ${CAROUSEL_HEIGHT};
   padding: ${CAROUSEL_SPACING};
-  background-color: ${({ theme }) => theme.backgroundCode};
+  background-color: var(--background-code);
   position: relative;
 
   ${breakpoints.maxSm} {
@@ -126,12 +126,14 @@ export const DotButton = styled(PlainButton)<{ $active?: boolean }>`
   margin-right: 0.75rem;
   margin-left: 0.75rem;
   &:after {
-    ${({ $active, theme }) => css`
-      background: ${$active ? theme.brandPrimary : theme.backgroundSite};
+    ${({ $active }) => css`
+      background: ${$active
+        ? 'var(--brand-primary)'
+        : 'var(--background-site)'};
       ${supportsStyles.gradientText} {
         background: ${$active
-          ? `linear-gradient(45deg, ${theme.brandPrimary}, ${theme.brandSecondary})`
-          : theme.backgroundSite};
+          ? 'linear-gradient(45deg, var(--brand-primary), var(--brand-secondary))'
+          : 'var(--background-site)'};
       }
     `};
     border-radius: 0.2rem;
@@ -147,7 +149,7 @@ export const ArrowButton = styled(PlainButton)<{ $direction: 'prev' | 'next' }>`
     right: ${$direction === 'next' && CAROUSEL_SPACING};
   `};
   z-index: ${LAYERS.STEP};
-  color: ${({ theme }) => theme.backgroundSite};
+  color: var(--background-site);
   position: absolute;
   display: flex;
   align-items: center;

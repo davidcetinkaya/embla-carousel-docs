@@ -6,10 +6,14 @@ import { supportsStyles } from 'consts'
 
 const Wrapper = styled(PlainLink)`
   ${gradientTextStyles};
-  border-bottom: ${({ theme }) => `0.1rem solid ${theme.brandPrimary}`};
+  border-bottom: 0.1rem solid var(--brand-primary);
   ${supportsStyles.gradientText} {
-    border-image: ${({ theme }) =>
-      `linear-gradient(90deg, ${theme.brandPrimary}, ${theme.brandSecondary}) 20%`};
+    border-image: linear-gradient(
+        90deg,
+        var(--brand-primary),
+        var(--brand-secondary)
+      )
+      20%;
   }
   border-top: 0;
   border-left: 0;

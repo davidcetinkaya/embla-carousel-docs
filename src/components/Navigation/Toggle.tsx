@@ -25,23 +25,21 @@ const Wrapper = styled(CtaButton)`
 const Burger = styled.div<{ $isOpen: boolean }>`
   position: relative;
   > span {
-    background-color: ${({ theme }) => theme.backgroundSite};
+    background-color: var(--background-site);
     display: block;
     height: 2px;
     border-radius: 2px;
     position: relative;
     width: 25px;
-    transition: background-color 0.2s;
     &:before,
     &:after {
-      background-color: ${({ theme }) => theme.backgroundSite};
+      background-color: var(--background-site);
       position: absolute;
       content: "";
       border-radius: 2px;
       display: block;
       height: 100%;
       width: 100%;
-      transition: transform 0.2s;
     }
     &:before {
       transform: translateY(8px);

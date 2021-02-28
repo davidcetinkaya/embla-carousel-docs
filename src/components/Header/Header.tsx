@@ -4,7 +4,6 @@ import { Frame } from 'components/SiteLayout'
 import { breakpoints, LAYERS } from 'consts'
 import { Actions } from './Actions'
 import { Logo } from './Logo'
-import { rgba } from 'polished'
 
 export const HEADER_HEIGHT = '6rem'
 
@@ -19,7 +18,7 @@ const Wrapper = styled.header`
 const Fixed = styled.div`
   ${HEIGHT};
   z-index: ${LAYERS.HEADER};
-  background-color: ${({ theme }) => theme.backgroundSite};
+  background-color: var(--background-site);
   top: 0;
   left: 0;
   right: 0;
@@ -33,10 +32,11 @@ const Fixed = styled.div`
     right: 0;
     height: 3rem;
     pointer-events: none;
-    background: ${({ theme }) =>
-      `linear-gradient(to top, ${rgba(theme.backgroundSite, 0)} 0, ${
-        theme.backgroundSite
-      } 100%)`};
+    background: linear-gradient(
+      to top,
+      rgba(var(--background-site-rgb-value), 0) 0,
+      var(--background-site) 100%
+    );
   }
   position: absolute;
   ${breakpoints.minSm} {

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import maskable from 'assets/images/maskable.png'
-import shareImage from 'assets/images/share-image.jpg'
 import { graphql } from 'gatsby'
 import { useSiteMetadata } from 'hooks'
 import { Hero } from 'components/Hero'
@@ -50,7 +49,7 @@ const Home = (props: PropType) => {
               "name": "${removeProtocol(siteUrl)}",
               "description": "${description}",
               "url": "${siteUrl}/",
-              "image": "${siteUrl}${shareImage}",
+              "image": "${siteUrl}/share-image.jpg",
               "logo": "${siteUrl}${maskable}"
             }
           `}

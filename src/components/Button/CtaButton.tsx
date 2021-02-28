@@ -8,11 +8,14 @@ export const ctaButtonStyles = css`
   padding: 1.7rem 3.5rem;
   font-weight: bold;
   display: inline-flex;
-  color: ${({ theme }) => theme.backgroundSite};
-  background-color: ${({ theme }) => theme.brandPrimary};
+  color: var(--background-site);
+  background-color: var(--brand-primary);
   ${supportsStyles.gradientText} {
-    background-image: ${({ theme }) =>
-      `linear-gradient(45deg, ${theme.brandPrimary}, ${theme.brandSecondary})`};
+    background-image: linear-gradient(
+      45deg,
+      var(--brand-primary),
+      var(--brand-secondary)
+    );
   }
 `
 

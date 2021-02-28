@@ -18,3 +18,7 @@ declare module '*.png' {
   const content: string
   export default content
 }
+
+interface Window {
+  __THEME__: 'light' | 'dark'
+}

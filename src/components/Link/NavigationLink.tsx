@@ -12,7 +12,7 @@ const Wrapper = styled(PlainLink)`
 `
 
 const InactiveText = styled.span<{ $isActive: boolean }>`
-  color: ${({ theme }) => theme.textMediumContrast};
+  color: var(--text-medium-contrast);
   opacity: ${({ $isActive }) => ($isActive ? 0 : 1)};
   transform: translateY(-50%);
   position: absolute;
