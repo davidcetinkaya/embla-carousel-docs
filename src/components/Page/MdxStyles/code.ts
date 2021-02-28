@@ -1,6 +1,6 @@
 import { frameCollapseStyles } from 'components/SiteLayout'
 import { css } from 'styled-components'
-import { breakpoints, THEME_KEYS } from 'consts'
+import { breakpoints } from 'consts'
 
 const BORDER_RADIUS = '0.4rem'
 const CODE_PADDING = '2.4rem'

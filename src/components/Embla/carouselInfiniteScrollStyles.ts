@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { createSquareSizeStyles } from 'utils'
 import { Slide } from './carouselBasicStyles'
 
