@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { breakpoints, THEME_KEYS } from 'consts'
+import { breakpoints } from 'consts'
 import { SiteLogo } from 'components/SiteLogo'
 import { createSquareSizeStyles, gradientTextStyles } from 'utils'
-import { useSiteMetadata, useTheme } from 'hooks'
+import { useSiteMetadata } from 'hooks'
 
 const Wrapper = styled.div`
   position: relative;
@@ -21,9 +21,8 @@ const Wrapper = styled.div`
   }
 `
 
-const EmblaLogo = styled(SiteLogo)<{ $isLightTheme: boolean }>`
+export const HeroLogo = styled(SiteLogo)`
   ${createSquareSizeStyles('25rem')};
-  opacity: ${({ $isLightTheme }) => ($isLightTheme ? 0.1 : 0.15)};
   position: absolute;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -99,12 +98,10 @@ const H2 = styled.h2`
 `
 export const Brand = () => {
   const { title, description } = useSiteMetadata()
-  const { theme } = useTheme()
-  const isLightTheme = theme === THEME_KEYS.LIGHT
 
   return (
     <Wrapper>
-      <EmblaLogo $isLightTheme={isLightTheme} />
+      <HeroLogo />
       <H1>
         {title.split(' ').map((word, index, words) => (
           <span key={`${word}-${index}`}>

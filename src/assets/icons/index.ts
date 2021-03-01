@@ -7,6 +7,8 @@ import ArrowLeftIcon from './arrow-left.svg'
 import ArrowRightIcon from './arrow-right.svg'
 import ChevronLeftIcon from './chevron-left.svg'
 import ChevronRightIcon from './chevron-right.svg'
+import EmblaLightIcon from './embla-logo-light-theme.svg'
+import EmblaDarkIcon from './embla-logo-dark-theme.svg'
 
 export {
   MoonIcon,
@@ -18,4 +20,6 @@ export {
   ArrowRightIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  EmblaLightIcon,
+  EmblaDarkIcon,
 }

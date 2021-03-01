@@ -26,11 +26,11 @@ const svgStyles = css`
   left: 50%;
 `
 
-const SunSvg = styled(SunIcon)`
+export const SunSvg = styled(SunIcon)`
   ${svgStyles};
 `
 
-const MoonSvg = styled(MoonIcon)`
+export const MoonSvg = styled(MoonIcon)`
   ${svgStyles};
 `
 
@@ -38,7 +38,6 @@ export const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme()
   const isLightTheme = theme === THEME_KEYS.LIGHT
   const oppositeTheme = isLightTheme ? THEME_KEYS.DARK : THEME_KEYS.LIGHT
-  const Icon = isLightTheme ? MoonSvg : SunSvg
 
   return (
     <Wrapper
@@ -46,7 +45,8 @@ export const ThemeToggle = () => {
       onClick={toggleTheme}
       aria-label={`Activate ${oppositeTheme} theme`}
     >
-      <Icon aria-hidden="true" focusable="false" />
+      <MoonSvg aria-hidden="true" focusable="false" />
+      <SunSvg aria-hidden="true" focusable="false" />
     </Wrapper>
   )
 }

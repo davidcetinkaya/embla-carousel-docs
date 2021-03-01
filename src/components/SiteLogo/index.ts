@@ -1,1 +1,1 @@
-export { SiteLogo } from './SiteLogo'
+export { SiteLogo, LogoLightIcon, LogoDarkIcon } from './SiteLogo'
