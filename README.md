@@ -19,7 +19,7 @@ Recommended node version is defined in `.nvmrc`.
 - `npm run prettier:fix` - Fix any [Prettier](https://prettier.io/) issues
 - `npm run eslint:report` - Report any [ESLint](https://eslint.org/) issues
 - `npm run eslint:fix` - Fix any [ESLint](https://eslint.org/) issues
-- `npm run predeploy:clean`: Clean up deployment folder
-- `npm run predeploy:build`: Clean up and re-build Gatsby project
-- `npm run predeploy:copy`: Copy Gatsby project build to deployment folder
-- `npm run predeploy`: Run all predeploy commands
+- `npm run predeploy:clean` - Clean up deployment folder
+- `npm run predeploy:build` - Clean up and re-build Gatsby project
+- `npm run predeploy:copy` - Copy Gatsby project build to deployment folder
+- `npm run predeploy` - Run all predeploy commands
