@@ -6,7 +6,7 @@ import { useTabAccess } from 'hooks/useTabAccess'
 
 const linkStyles = css<{ $isTabbing: boolean }>`
   ${tabAccessStyles};
-  -webkit-tap-highlight-color: var(--text-high-contrast);
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
   text-decoration: none;
 `
 
