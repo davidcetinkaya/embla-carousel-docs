@@ -7,12 +7,12 @@ import { NavigationLink } from 'components/Link'
 import { ChevronRightIcon } from 'assets/icons'
 import { useRouteActive } from 'hooks'
 
-const ITEM_SPACING = '1.1rem'
+const ITEM_SPACING = '0.6rem'
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  line-height: 1;
+  line-height: 1.65;
 `
 
 const Toggle = styled(PlainButton)<{ $isActive: boolean }>`
@@ -59,7 +59,7 @@ const Menu = styled.ul<{ $isOpen: boolean }>`
     top: 0;
     left: 0.3rem;
     width: 0.1rem;
-    bottom: ${ITEM_SPACING};
+    bottom: 0;
     background-color: var(--detail-medium-contrast);
   }
 `

@@ -5,8 +5,9 @@ import { tabAccessStyles } from 'components/TabAccess'
 import { useTabAccess } from 'hooks/useTabAccess'
 
 const linkStyles = css<{ $isTabbing: boolean }>`
-  text-decoration: none;
   ${tabAccessStyles};
+  -webkit-tap-highlight-color: var(--text-high-contrast);
+  text-decoration: none;
 `
 
 const InternalLink = styled(Link)`

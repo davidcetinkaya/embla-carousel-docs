@@ -12,7 +12,7 @@ const ITEM_SPACING_SM_DOWN = '2.5rem'
 const Wrapper = styled.ul`
   display: flex;
   align-items: center;
-  line-height: 1;
+  line-height: 1.65;
   margin-left: -${ITEM_SPACING_SM_DOWN};
   ${breakpoints.minSm} {
     margin-left: -${ITEM_SPACING_SM_UP};
@@ -31,7 +31,7 @@ const linkStyles = css`
   color: var(--text-medium-contrast);
   display: inline-flex;
   text-align: center;
-  padding: 1.1rem 0;
+  padding: 0.6rem 0;
 `
 
 const InternalLink = styled(NavigationLink)`

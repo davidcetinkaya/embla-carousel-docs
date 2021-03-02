@@ -4,6 +4,7 @@ import { useTabAccess } from 'hooks/useTabAccess'
 import styled from 'styled-components'
 
 const Wrapper = styled.button<{ $isTabbing: boolean }>`
+  -webkit-tap-highlight-color: var(--text-high-contrast);
   background-color: transparent;
   touch-action: manipulation;
   display: inline-flex;
