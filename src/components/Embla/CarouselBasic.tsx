@@ -72,7 +72,9 @@ const Carousel = (props: PropType) => {
                 aria-roledescription="slide"
                 role="group"
               >
-                <SlideNumber />
+                <SlideNumber>
+                  <span>{index + 1}</span>
+                </SlideNumber>
                 <SlideInner>
                   <SlideImg src={src} alt={alt} />
                 </SlideInner>

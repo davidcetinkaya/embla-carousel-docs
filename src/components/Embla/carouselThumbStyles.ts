@@ -106,6 +106,7 @@ export const ThumbSlideInner = styled(PlainButton)`
 export const ThumbSlideNumber = styled(SlideNumber)`
   ${createSquareSizeStyles('3.2rem')};
   font-size: 1.4rem;
+  line-height: 3.2rem;
   top: 0.4rem;
   right: 0.4rem;
 `

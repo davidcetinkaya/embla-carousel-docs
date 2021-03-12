@@ -51,7 +51,6 @@ export const Container = styled.div<{ $axis?: EmblaOptionsType['axis'] }>`
   -webkit-touch-callout: none;
   -khtml-user-select: none;
   -webkit-tap-highlight-color: transparent;
-  counter-reset: slidenumber;
 `
 
 export const Slide = styled.div<{ $size: number }>`
@@ -82,18 +81,18 @@ export const SlideNumber = styled.div`
   right: 0.9rem;
   background-color: rgba(var(--background-site-rgb-value), 0.85);
   border-radius: 50%;
+  line-height: 4.6rem;
+  font-weight: 500;
+  text-align: center;
 
-  &:before {
+  > span {
     ${gradientTextStyles};
-    line-height: 1;
-    counter-increment: slidenumber;
-    content: counter(slidenumber);
-    position: absolute;
-    font-weight: 500;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 `
 

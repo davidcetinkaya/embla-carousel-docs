@@ -58,7 +58,9 @@ const Carousel = (props: PropType) => {
                 aria-label={`${index + 1} of ${slideSizes.length}`}
                 role="group"
               >
-                <SlideNumber />
+                <SlideNumber>
+                  <span>{index + 1}</span>
+                </SlideNumber>
                 <ParallaxSlideInner>
                   <ParallaxSlideLayer
                     style={{ transform: `translateX(${slideStyles[index]}%)` }}
