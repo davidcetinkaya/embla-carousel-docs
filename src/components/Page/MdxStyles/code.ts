@@ -131,14 +131,14 @@ export const codeStyles = css`
     white-space: pre;
 
     ::-webkit-scrollbar-thumb {
-      background-color: var(--brand-primary);
+      background-color: var(--scroll-thumb);
     }
     ::-webkit-scrollbar-track {
-      background-color: var(--brand-secondary);
+      background-color: var(--detail-low-contrast);
     }
     ::-webkit-scrollbar {
       width: 0.4rem;
-      height: 0.4rem;
+      height: 0.5rem;
     }
   }
 

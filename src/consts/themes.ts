@@ -30,6 +30,7 @@ const THEME_LIGHT = css`
   --detail-high-contrast: rgb(192, 192, 192);
   --detail-medium-contrast: rgb(234, 234, 234);
   --detail-low-contrast: rgb(240, 240, 242);
+  --scroll-thumb: rgb(226, 226, 226);
 `
 
 const THEME_DARK = css`
@@ -46,6 +47,7 @@ const THEME_DARK = css`
   --detail-high-contrast: rgb(101, 101, 101);
   --detail-medium-contrast: rgb(25, 25, 25);
   --detail-low-contrast: rgb(21, 21, 21);
+  --scroll-thumb: rgb(41, 41, 41);
 `
 
 export const themeStyles = css`

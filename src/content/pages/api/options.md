@@ -84,6 +84,13 @@ Default: `''`
 
 Clear leading and trailing empty space that causes excessive scrolling. Use `trimSnaps` to only use snap points that trigger scrolling or `keepSnaps` to keep them.
 
+### autoResize
+
+Type: `boolean`  
+Default: `true`
+
+Determines if Embla Carousel should call [reInit](/api/methods/#reinit) automatically when the window is resized, in order to make all necessary re-calculations. Opting out of this will still fire the resize event for convenience.
+
 ### inViewThreshold
 
 Type: `number`  
