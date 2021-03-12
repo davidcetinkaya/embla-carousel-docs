@@ -3,7 +3,7 @@ import { EmblaOptionsType } from 'embla-carousel'
 import { useEmblaCarousel } from 'embla-carousel/react'
 import { useInView } from 'react-intersection-observer'
 import { imageByIndex } from './images'
-import { Slide, SlideInner, SlideImg } from './carouselBasicStyles'
+import { Slide, SlideInner, SlideImg, SlideNumber } from './carouselBasicStyles'
 import {
   Wrapper,
   MainViewport,
@@ -12,6 +12,7 @@ import {
   ThumbContainer,
   ThumbSlide,
   ThumbSlideInner,
+  ThumbSlideNumber,
 } from './carouselThumbStyles'
 
 type PropType = {
@@ -65,6 +66,7 @@ const Carousel = (props: PropType) => {
                 aria-label={`${index + 1} of ${slideSizes.length}`}
                 role="group"
               >
+                <SlideNumber />
                 <SlideInner>
                   <SlideImg src={src} alt={alt} />
                 </SlideInner>
@@ -84,6 +86,7 @@ const Carousel = (props: PropType) => {
                 aria-label={`${index + 1} of ${slideSizes.length}`}
                 role="group"
               >
+                <ThumbSlideNumber />
                 <ThumbSlideInner
                   disabled={index === selectedIndex}
                   aria-controls={carouselId}

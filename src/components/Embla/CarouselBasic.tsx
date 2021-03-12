@@ -11,6 +11,7 @@ import {
   Slide,
   SlideInner,
   SlideImg,
+  SlideNumber,
   DotButtons,
   DotButton,
   ArrowButton,
@@ -71,6 +72,7 @@ const Carousel = (props: PropType) => {
                 aria-roledescription="slide"
                 role="group"
               >
+                <SlideNumber />
                 <SlideInner>
                   <SlideImg src={src} alt={alt} />
                 </SlideInner>

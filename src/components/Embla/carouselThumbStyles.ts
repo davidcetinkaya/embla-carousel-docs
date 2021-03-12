@@ -2,10 +2,12 @@ import styled from 'styled-components'
 import { frameCollapseStyles } from 'components/SiteLayout'
 import { breakpoints, supportsStyles } from 'consts'
 import { PlainButton } from 'components/Button'
+import { createSquareSizeStyles } from 'utils'
 import {
   CAROUSEL_RADIUS,
   CAROUSEL_SPACING,
   ITEM_SPACING,
+  SlideNumber,
 } from './carouselBasicStyles'
 
 const HEIGHT = '30.2rem'
@@ -43,6 +45,7 @@ export const MainContainer = styled.div`
   -khtml-user-select: none;
   -webkit-tap-highlight-color: transparent;
   height: 100%;
+  counter-reset: slidenumber;
   margin-left: -${ITEM_SPACING};
 
   > div {
@@ -58,6 +61,7 @@ export const ThumbContainer = styled.div`
   -webkit-tap-highlight-color: transparent;
   height: calc(100% - 1rem);
   margin-top: 1rem;
+  counter-reset: slidenumber;
   margin-left: -${ITEM_SPACING};
 
   > div {
@@ -97,4 +101,11 @@ export const ThumbSlideInner = styled(PlainButton)`
     cursor: default;
     opacity: 0.25;
   }
+`
+
+export const ThumbSlideNumber = styled(SlideNumber)`
+  ${createSquareSizeStyles('3.2rem')};
+  font-size: 1.4rem;
+  top: 0.4rem;
+  right: 0.4rem;
 `

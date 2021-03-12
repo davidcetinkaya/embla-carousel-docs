@@ -3,7 +3,13 @@ import { useEmblaCarousel } from 'embla-carousel/react'
 import { EmblaOptionsType } from 'embla-carousel'
 import { useInView } from 'react-intersection-observer'
 import { imageByIndex } from './images'
-import { Wrapper, Container, Viewport, Slide } from './carouselBasicStyles'
+import {
+  Wrapper,
+  Container,
+  Viewport,
+  Slide,
+  SlideNumber,
+} from './carouselBasicStyles'
 import {
   ParallaxSlideInner,
   ParallaxSlideLayer,
@@ -52,6 +58,7 @@ const Carousel = (props: PropType) => {
                 aria-label={`${index + 1} of ${slideSizes.length}`}
                 role="group"
               >
+                <SlideNumber />
                 <ParallaxSlideInner>
                   <ParallaxSlideLayer
                     style={{ transform: `translateX(${slideStyles[index]}%)` }}

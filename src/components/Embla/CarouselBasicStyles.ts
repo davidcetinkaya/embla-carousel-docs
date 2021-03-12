@@ -3,7 +3,7 @@ import { frameCollapseStyles } from 'components/SiteLayout'
 import { EmblaOptionsType } from 'embla-carousel'
 import { breakpoints, LAYERS, supportsStyles } from 'consts'
 import { PlainButton } from 'components/Button'
-import { createSquareSizeStyles } from 'utils'
+import { createSquareSizeStyles, gradientTextStyles } from 'utils'
 
 const CAROUSEL_HEIGHT = '22.2rem'
 export const CAROUSEL_SPACING = '1.6rem'
@@ -35,24 +35,23 @@ export const Container = styled.div<{ $axis?: EmblaOptionsType['axis'] }>`
     $axis === 'y'
       ? css`
           flex-wrap: wrap;
-          height: ${`calc(100% + ${ITEM_SPACING})`};
-          margin-top: -${ITEM_SPACING};
           > div {
-            padding-top: ${ITEM_SPACING};
+            margin-top: ${ITEM_SPACING};
           }
         `
       : css`
-          height: 100%;
           margin-left: -${ITEM_SPACING};
           > div {
             padding-left: ${ITEM_SPACING};
           }
         `};
+  height: 100%;
   display: flex;
   user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
   -webkit-tap-highlight-color: transparent;
+  counter-reset: slidenumber;
 `
 
 export const Slide = styled.div<{ $size: number }>`
@@ -72,6 +71,29 @@ export const SlideInner = styled.div`
   ${supportsStyles.objectFitCover} {
     position: static;
     overflow: visible;
+  }
+`
+
+export const SlideNumber = styled.div`
+  ${createSquareSizeStyles('4.6rem')};
+  z-index: ${LAYERS.STEP};
+  position: absolute;
+  top: 0.8rem;
+  right: 0.9rem;
+  background-color: rgba(var(--background-site-rgb-value), 0.85);
+  border-radius: 50%;
+
+  &:before {
+    ${gradientTextStyles};
+    line-height: 1;
+    counter-increment: slidenumber;
+    content: counter(slidenumber);
+    position: absolute;
+    font-weight: 500;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
   }
 `
 

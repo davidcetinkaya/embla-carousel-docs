@@ -11,6 +11,7 @@ import {
   Slide,
   SlideInner,
   SlideImg,
+  SlideNumber,
 } from './carouselBasicStyles'
 
 type PropType = {
@@ -65,6 +66,7 @@ const Carousel = (props: PropType) => {
               aria-label={`${index + 1} of ${slideSizes.length}`}
               role="group"
             >
+              <SlideNumber />
               <SlideInner>
                 <SlideImg src={src} alt={alt} />
               </SlideInner>
