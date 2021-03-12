@@ -173,7 +173,11 @@ export const CarouselWheelItem = (props: PropType) => {
             {slideStyles.map((slideStyle, index) => (
               <WheelSlide
                 key={index}
-                style={wheelReady ? slideStyle : { transform: 'none' }}
+                style={
+                  wheelReady
+                    ? slideStyle
+                    : { position: 'static', transform: 'none' }
+                }
                 aria-label={`${index + 1} of ${slideStyles.length}`}
                 aria-roledescription="slide"
                 role="group"
