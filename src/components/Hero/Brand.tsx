@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { breakpoints } from 'consts'
+import { breakpoints, cssHackStyles } from 'consts'
 import { SiteLogo } from 'components/SiteLogo'
 import { createSquareSizeStyles, gradientTextStyles } from 'utils'
 import { useSiteMetadata } from 'hooks'
@@ -39,10 +39,14 @@ export const HeroLogo = styled(SiteLogo)`
 const H1 = styled.h1`
   color: var(--text-high-contrast);
   position: relative;
-  font-weight: 900;
   font-size: 3rem;
   line-height: 0.9;
   margin-bottom: 1.8rem;
+  font-weight: 900;
+
+  ${cssHackStyles.firefoxAll} {
+    font-weight: 1000;
+  }
 
   > span:nth-child(2) {
     ${gradientTextStyles};

@@ -4,15 +4,20 @@ import { createSquareSizeStyles } from 'utils'
 import { useNavigation, useSiteMetadata } from 'hooks'
 import { PlainLink } from 'components/Link'
 import { SiteLogo } from 'components/SiteLogo'
+import { cssHackStyles } from 'consts'
 
 const Wrapper = styled(PlainLink)`
   color: var(--text-high-contrast);
   display: flex;
   align-items: center;
   text-decoration: none;
-  font-weight: 900;
   font-size: 2rem;
   line-height: 1;
+  font-weight: 900;
+
+  ${cssHackStyles.firefoxAll} {
+    font-weight: 1000;
+  }
 `
 
 const LogoWrapper = styled.div`
