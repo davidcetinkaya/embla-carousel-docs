@@ -1,8 +1,8 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { ThemeToggle } from 'components/Theme'
-import { NavigationLink, PlainLink } from 'components/Link'
-import { breakpoints, URLS } from 'consts'
+import { NavigationLink } from 'components/Link'
+import { breakpoints } from 'consts'
 import { useRoutes } from 'hooks'
 import { hiddenAtBreakpointStyles } from 'utils'
 
@@ -27,19 +27,11 @@ const Item = styled.li`
   ${hiddenAtBreakpointStyles};
 `
 
-const linkStyles = css`
+const Link = styled(NavigationLink)`
   color: var(--text-medium-contrast);
   display: inline-flex;
   text-align: center;
   padding: 0.6rem 0;
-`
-
-const InternalLink = styled(NavigationLink)`
-  ${linkStyles};
-`
-
-const ExternalLink = styled(PlainLink)`
-  ${linkStyles};
 `
 
 export const Actions = () => {
@@ -47,19 +39,16 @@ export const Actions = () => {
 
   return (
     <Wrapper>
-      <Item $hidden="maxXs">
+      <Item $hidden="maxSm">
         <nav aria-label="Quick Navigation Menu">
           <Wrapper>
             {routes.map((route) => (
               <Item key={route.id}>
-                <InternalLink route={route}>{route.title}</InternalLink>
+                <Link route={route}>{route.title}</Link>
               </Item>
             ))}
           </Wrapper>
         </nav>
-      </Item>
-      <Item $hidden="maxSm">
-        <ExternalLink to={URLS.LIBRARY_REPOSITORY}>GitHub</ExternalLink>
       </Item>
       <Item>
         <ThemeToggle />

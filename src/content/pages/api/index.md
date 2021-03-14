@@ -1,7 +1,7 @@
 ---
 title: API
 description: Explore the Embla Carousel API that is designed with extensibility in mind.
-order: 1
+order: 2
 date: 2021-02-21
 ---
 

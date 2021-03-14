@@ -1,0 +1,67 @@
+---
+title: Slide Sizes
+description: Learn how Embla Carousel handles slide sizes and how to customize them.
+order: 0
+date: 2021-03-13
+---
+
+# Slide Sizes
+
+> **Note!** If you haven't installed Embla Carousel yet, please visit the [installation instructions](/get-started/#choose-installation-type) before you continue with this guide.
+
+This guide will show you how to customize **slide sizes** for your carousels. Embla Carousel supports both horizontal and vertical carousels with the [axis](/api/options/#axis) option and that's why this guide will use the term **slide sizes** instead of **widths** or **heights**.
+
+### Declaring sizes
+
+Slide sizes should in most cases be **declared with CSS**. Embla Carousel **supports any slide size out of the box**, and will pick up whatever size you've declared in your CSS. A very simple setup could look like this:
+
+```css
+.embla__slide {
+  flex: 0 0 50%; /* Slide covers 50% of the viewport */
+}
+```
+
+You can also declare your slide sizes using any other CSS unit like so:
+
+```css
+.embla__slide {
+  flex: 0 0 200px; /* Slide covers 200px of the viewport */
+}
+```
+
+### Variable sizes
+
+Variable slide sizes is also **supported out of the box**. Declare your slide sizes in your CSS or let the content of your slides determine their sizes.
+
+```css
+.embla__slide:nth-child(1) {
+  flex: 0 0 30%; /* Slide covers 30% of the viewport */
+}
+.embla__slide:nth-child(2) {
+  flex: 0 0 60%; /* Slide covers 60% of the viewport */
+}
+```
+
+> **Note!** If you're letting your slide sizes adapt to their content, make sure that the slide sizes don't exceed the size of the viewport.
+
+```css
+.embla__slide {
+  flex: 0 0 auto; /* Adapt slide size to its content */
+  max-width: 100%; /* Prevent from growing larger than viewport */
+}
+```
+
+### Responding to breakpoints
+
+If you've not turned off the [autoResize](/api/options/#autoresize) option, Embla Carousel will **automatically pick up any changes in slide sizes** when the **window is resized**. It's very simple to set different sizes based on your breakpoints:
+
+```css
+.embla__slide {
+  flex: 100%; /* Default slide covers 100% of the viewport */
+}
+@media (min-width: 768px) {
+  .embla__slide {
+    flex: 50%; /* Breakpoint SM slide covers 50% of the viewport */
+  }
+}
+```

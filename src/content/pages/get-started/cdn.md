@@ -40,7 +40,7 @@ The wrapping element with the classname `embla` is needed to cover the scroll ov
 }
 .embla__slide {
   position: relative;
-  min-width: 100%;
+  flex: 0 0 100%;
 }
 ```
 
