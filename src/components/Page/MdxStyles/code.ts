@@ -1,6 +1,6 @@
 import { frameCollapseStyles } from 'components/SiteLayout'
 import { css } from 'styled-components'
-import { breakpoints } from 'consts'
+import { breakpoints, LAYERS } from 'consts'
 
 const BORDER_RADIUS = '0.4rem'
 const CODE_PADDING = '2.4rem'
@@ -18,12 +18,12 @@ export const codeStyles = css`
     position: relative;
     &:before,
     &:after {
+      width: ${CODE_PADDING};
       display: block;
       position: absolute;
       content: '';
       top: 0;
       bottom: 0;
-      width: ${CODE_PADDING};
       pointer-events: none;
     }
     &:before {
@@ -108,6 +108,40 @@ export const codeStyles = css`
     }
   }
 
+  .gatsby-highlight-code-line {
+    position: relative;
+    display: block;
+    margin-left: -2.4rem;
+    margin-right: -2.4rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+
+    &:before,
+    &:after {
+      z-index: ${LAYERS.STEP};
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      content: '';
+      pointer-events: none;
+      background-image: linear-gradient(
+        45deg,
+        var(--brand-primary),
+        var(--brand-secondary)
+      );
+    }
+
+    &:after {
+      left: 0;
+      width: 0.4rem;
+    }
+    &:before {
+      right: 0;
+      left: 0;
+      opacity: 0.07;
+    }
+  }
+
   .gatsby-highlight pre[class*='language-'] {
     padding: ${CODE_PADDING} 0;
     background-color: transparent;
@@ -149,8 +183,6 @@ export const codeStyles = css`
     color: var(--text-comment);
   }
   .token.class-name,
-  .token.tag,
-  .token.constant,
   .token.attr-value,
   .token.keyword,
   .token.control,

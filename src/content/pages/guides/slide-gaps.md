@@ -7,9 +7,9 @@ date: 2021-03-13
 
 # Slide Gaps
 
-> **Note!** If you haven't installed Embla Carousel yet, please visit the [installation instructions](/get-started/#choose-installation-type) before you continue with this guide.
+> **Note!** If you haven't installed Embla Carousel yet, please visit the [installation](/get-started/#choose-installation-type) instructions before you continue with this guide.
 
-Embla Carousel allows you to use **any CSS to align your slides** in the chosen [scroll direction](/api/options/#axis), whether it's CSS Grid, flexbox, inline-blocks or anything else. It will conveniently **pick up any spacings** between the slides and **automatically adjust the scroll snaps** accordingly.
+Embla Carousel allows you to use **any CSS to align your slides** in the chosen scroll [axis](/api/options/#axis), whether it's CSS Grid, flexbox, inline-blocks or anything else. It will conveniently **pick up any spacings** between the slides and **automatically adjust the scroll snaps** accordingly.
 
 ### Declaring gaps
 

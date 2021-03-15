@@ -7,7 +7,7 @@ date: 2021-03-13
 
 # Slide Sizes
 
-> **Note!** If you haven't installed Embla Carousel yet, please visit the [installation instructions](/get-started/#choose-installation-type) before you continue with this guide.
+> **Note!** If you haven't installed Embla Carousel yet, please visit the [installation](/get-started/#choose-installation-type) instructions before you continue with this guide.
 
 This guide will show you how to customize **slide sizes** for your carousels. Embla Carousel supports both horizontal and vertical carousels with the [axis](/api/options/#axis) option and that's why this guide will use the term **slide sizes** instead of **widths** or **heights**.
 
