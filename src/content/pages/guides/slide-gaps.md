@@ -38,11 +38,11 @@ If you're using CSS Grid you can declare your gaps like so:
 }
 ```
 
-> **Note!** If you don't have loop enabled, Embla Carousel will ignore any gaps at the start and end edge of the carousel.
+> **Note!** If you don't have [loop](/api/options/#loop) enabled, Embla Carousel will ignore any gaps at the start and end edge of the carousel.
 
 ### Variable gaps
 
-Just like [variable slide sizes](/guides/slide-sizes/#variable-sizes), variable gap sizes is **supported out of the box**. Declare your gap sizes in your CSS to achieve this:
+Just like [variable](/guides/slide-sizes/#variable-sizes) slide sizes, variable gap sizes is **supported out of the box**. Declare your gap sizes in your CSS to achieve this:
 
 ```css
 .embla__slide:nth-child(1) {

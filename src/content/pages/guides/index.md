@@ -15,3 +15,4 @@ Learn more about how to customize your carousels:
 
 - [Slide Sizes](/guides/slide-sizes/)
 - [Slide Gaps](/guides/slide-gaps/)
+- [Prev & Next](/guides/previous-and-next-buttons/)

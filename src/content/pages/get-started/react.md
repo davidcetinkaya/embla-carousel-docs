@@ -18,6 +18,7 @@ npm install embla-carousel --save
 Embla Carousel provides the handy `useEmblaCarousel` hook for seamless integration with React. A minimal setup requires an **overflow wrapper** and a **scroll container**. Start by adding the following structure to your carousel:
 
 ```jsx
+import React from 'react'
 import { useEmblaCarousel } from 'embla-carousel/react'
 
 const EmblaCarousel = () => {
@@ -59,6 +60,7 @@ The hook gives us a **ref** to attach to our wrapping element with the classname
 The `useEmblaCarousel` hook takes the Embla Carousel [options](/api/options/) object as an argument. Additionaly, you can make use of the [API](/api/) with a `useEffect` like demonstrated below:
 
 ```jsx
+import React from 'react'
 import { useEmblaCarousel } from 'embla-carousel/react'
 
 const EmblaCarousel = () => {
